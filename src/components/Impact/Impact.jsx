@@ -86,7 +86,7 @@ const Impact = () => {
       <footer className="text-center mt-8">
         <p className="text-gray-600">
           For more information on solutions to air pollution, visit our{" "}
-          <a href="/solution" className="text-blue-600 underline">
+          <a href="/solutions" className="text-blue-600 underline">
             Solutions
           </a>{" "}
           page.
