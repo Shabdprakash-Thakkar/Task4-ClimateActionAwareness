@@ -3,21 +3,21 @@ import axios from "axios";
 
 const News = () => {
   const [articles, setArticles] = useState([]);
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY; // Access the API key from environment variable
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=climate&apiKey=1f24857ada8f466896c105f3694539b3"
+          `https://newsapi.org/v2/everything?q=climate&apiKey=${apiKey}`
         );
-        // Limit to the top 15 articles
         setArticles(response.data.articles.slice(0, 15));
       } catch (error) {
         console.error("Error fetching news:", error);
       }
     };
     fetchNews();
-  }, []); // This ensures the news is fetched on component mount
+  }, [apiKey]);
 
   return (
     <section id="news" className="p-8 bg-gray-100">
